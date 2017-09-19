@@ -18,6 +18,9 @@
     <string name="gallons">Gallons</string>
     <string name="return_btn">Input Room Dimensions</string>
 
+    <string name="interior_surface_area_text">Interior surface area:</string>
+    <string name="gallons_needed_text">Gallons needed:</string>
+
     <!-- HELP TEXT -->
     <string name="help_text">
         This paint job calculator computes the approximate number
