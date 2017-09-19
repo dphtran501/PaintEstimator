@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margins"
     tools:context="edu.orangecoastcollege.cs273.dtran258.paintestimator.MainActivity">
 
     <TextView
+        android:id="@+id/app_name_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:text="@string/app_name"/>
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/enter_dimensions_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/app_name_TV"
+        android:layout_margin="@dimen/view_margins"
+        android:text="@string/enter_dimensions"/>
+
+    <LinearLayout
+        android:id="@+id/room_dimensions_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enter_dimensions_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/view_margins"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/length"
+            android:layout_marginRight="@dimen/view_margins"
+            android:layout_marginEnd="@dimen/view_margins"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
