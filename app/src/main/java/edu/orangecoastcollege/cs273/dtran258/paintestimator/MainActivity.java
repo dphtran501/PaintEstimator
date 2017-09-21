@@ -8,6 +8,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * This activity allows the user to input information about the dimensions of a room and the number
+ * of doors and windows in that room. The user can then click a button to calculate the gallons of
+ * paint needed to paint that room.
+ * <p>
+ *     In addition, the user can click a button that will display an explanation of the calculation
+ *     for the surface area of the room and the gallons of paint required.
+ * </p>
+ *
+ * @author Derek Tran
+ * @version 1.0
+ * @since September 19, 2017
+ */
 public class MainActivity extends AppCompatActivity
 {
 
