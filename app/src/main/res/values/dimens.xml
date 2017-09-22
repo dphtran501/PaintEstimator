@@ -3,4 +3,5 @@
     <dimen name="layout_margins">15dp</dimen>
     <dimen name="view_margins">5dp</dimen>
     <dimen name="input_label_width">130dp</dimen>
+    <dimen name="dimensions_doors_buffer">40dp</dimen>
 </resources>

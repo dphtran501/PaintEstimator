@@ -44,7 +44,8 @@
             android:ems="4"
             android:inputType="numberDecimal"
             android:maxEms="4"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            tools:text="20.0"/>
 
     </LinearLayout>
 
@@ -66,7 +67,8 @@
             android:ems="4"
             android:maxEms="4"
             android:inputType="numberDecimal"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            tools:text="10.0"/>
 
     </LinearLayout>
 
@@ -88,7 +90,8 @@
             android:ems="4"
             android:maxEms="4"
             android:inputType="numberDecimal"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            tools:text="8.0"/>
 
     </LinearLayout>
 
@@ -97,65 +100,62 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView"
+        android:text="@string/enter_door_window"
         android:textAlignment="center"
-        tools:text="@string/enter_door_window" />
+        android:layout_marginBottom="@dimen/view_margins"
+        android:layout_marginTop="@dimen/dimensions_doors_buffer"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/input_label_width"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            tools:text="@string/doors" />
+            android:text="@string/doors" />
 
         <EditText
             android:id="@+id/doors_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:ems="4"
+            android:maxEms="4"
+            android:inputType="number"
+            android:textAlignment="center"
+            tools:text="1" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/input_label_width"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            tools:text="@string/windows" />
+            android:text="@string/windows" />
 
         <EditText
             android:id="@+id/windows_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:ems="4"
+            android:maxEms="4"
+            android:inputType="number"
+            android:textAlignment="center"
+            tools:text="2" />
 
     </LinearLayout>
 
+    <!-- Buttons and Gallons -->
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
