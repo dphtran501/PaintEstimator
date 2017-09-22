@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
         saveSharedPreferences();
     }
 
-    protected void goToHelp()
+    protected void goToHelp(View v)
     {
         // Construct EXPLICIT Intent to go to HelpActivity
         // Intent: specify where to start (context) and where we're going (next Activity)

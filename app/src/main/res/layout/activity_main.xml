@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/layout_margins"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context="edu.orangecoastcollege.cs273.dtran258.paintestimator.MainActivity">
 
 
@@ -22,9 +22,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_dimensions"
         android:layout_margin="@dimen/view_margins"
-        android:textAlignment="center"/>
+        android:text="@string/enter_dimensions"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="@dimen/input_label_width"
             android:layout_height="wrap_content"
-            android:text="@string/length"/>
+            android:text="@string/length" />
 
         <EditText
             android:id="@+id/length_edit_text"
@@ -45,7 +45,7 @@
             android:inputType="numberDecimal"
             android:maxEms="4"
             android:textAlignment="center"
-            tools:text="20.0"/>
+            tools:text="20.0" />
 
     </LinearLayout>
 
@@ -58,17 +58,17 @@
         <TextView
             android:layout_width="@dimen/input_label_width"
             android:layout_height="wrap_content"
-            android:text="@string/width"/>
+            android:text="@string/width" />
 
         <EditText
             android:id="@+id/width_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
-            android:maxEms="4"
             android:inputType="numberDecimal"
+            android:maxEms="4"
             android:textAlignment="center"
-            tools:text="10.0"/>
+            tools:text="10.0" />
 
     </LinearLayout>
 
@@ -88,10 +88,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
-            android:maxEms="4"
             android:inputType="numberDecimal"
+            android:maxEms="4"
             android:textAlignment="center"
-            tools:text="8.0"/>
+            tools:text="8.0" />
 
     </LinearLayout>
 
@@ -100,10 +100,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_door_window"
-        android:textAlignment="center"
         android:layout_marginBottom="@dimen/view_margins"
-        android:layout_marginTop="@dimen/dimensions_doors_buffer"/>
+        android:layout_marginTop="@dimen/dimensions_doors_buffer"
+        android:text="@string/enter_door_window"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,8 +121,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
-            android:maxEms="4"
             android:inputType="number"
+            android:maxEms="4"
             android:textAlignment="center"
             tools:text="1" />
 
@@ -144,8 +144,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
-            android:maxEms="4"
             android:inputType="number"
+            android:maxEms="4"
             android:textAlignment="center"
             tools:text="2" />
 
@@ -156,30 +156,29 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margins"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button"
-            tools:text="@string/compute_button_text" />
+            android:text="@string/compute_button_text"
+            android:onClick="computeGallons"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button"
-            tools:text="@string/help_button_text" />
+            android:onClick="goToHelp"
+            android:text="@string/help_button_text" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/gallons_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:text="TextView"
+        android:layout_marginTop="@dimen/buttons_gallons_buffer"
         tools:text="@string/gallons" />
+
 </LinearLayout>
