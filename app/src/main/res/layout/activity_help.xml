@@ -13,6 +13,7 @@
         android:id="@+id/help_gallons_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margins"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         tools:text="@string/gallons"/>
@@ -20,12 +21,24 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margins"
+        android:onClick="goToMain"
         android:text="@string/return_btn"
         />
 
-    <TextView
-        android:id="@+id/textView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/help_text"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/view_margins">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/help_text_margins"
+            android:layout_marginLeft="@dimen/help_text_margins"
+            android:layout_marginRight="@dimen/help_text_margins"
+            android:layout_marginStart="@dimen/help_text_margins"
+            android:text="@string/help_text"/>
+    </ScrollView>
+
 </LinearLayout>

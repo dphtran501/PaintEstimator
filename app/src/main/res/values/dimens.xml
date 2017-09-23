@@ -5,4 +5,7 @@
     <dimen name="input_label_width">130dp</dimen>
     <dimen name="dimensions_doors_buffer">40dp</dimen>
     <dimen name="buttons_gallons_buffer">40dp</dimen>
+
+    <dimen name="help_text_margins">59dp</dimen>
+
 </resources>
