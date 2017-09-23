@@ -125,6 +125,11 @@ public class MainActivity extends AppCompatActivity
         saveSharedPreferences();
     }
 
+    /**
+     * Retrieves data on gallons of paint needed to paint surface area of room, sends data to
+     * <code>HelpActivity</code>, and launches <code>HelpActivity</code>.
+     * @param v The <code>View</code> that called this method.
+     */
     protected void goToHelp(View v)
     {
         // Construct EXPLICIT Intent to go to HelpActivity
