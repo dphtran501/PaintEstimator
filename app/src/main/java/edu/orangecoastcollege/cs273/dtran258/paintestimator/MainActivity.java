@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 /**
  * This activity allows the user to input information about the dimensions of a room and the number
  * of doors and windows in that room. The user can then click a button to calculate the gallons of
@@ -23,6 +25,9 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity
 {
+
+    // Decimal formatter
+    private static final DecimalFormat oneDP = new DecimalFormat("0.0");
 
     // VIEW
     private EditText mLengthEditText;
@@ -40,7 +45,12 @@ public class MainActivity extends AppCompatActivity
 
     private void initializeViews()
     {
-        // TODO: Connnect View member variables to ids in layout
+        mLengthEditText = (EditText) findViewById(R.id.length_edit_text);
+        mWidthEditText = (EditText) findViewById(R.id.width_edit_text);
+        mHeightEditText = (EditText) findViewById(R.id.height_edit_text);
+        mDoorsEditText = (EditText) findViewById(R.id.doors_edit_text);
+        mWindowsEditText = (EditText) findViewById(R.id.windows_edit_text);
+        mGallonsTextView = (TextView) findViewById(R.id.gallons_text_view);
     }
 
     private void loadSharedPreferences()
@@ -49,14 +59,16 @@ public class MainActivity extends AppCompatActivity
         if (mPrefs != null)
         {
             // Load all the room information
-            mRoom.setDoors(mPrefs.getInt("doors", 0));
-            mDoorsEditText.setText(String.valueOf(mRoom.getDoors()));
-            mRoom.setHeight(mPrefs.getFloat("height", 0.0f));
-            mHeightEditText.setText(String.valueOf(mRoom.getHeight()));
             mRoom.setLength(mPrefs.getFloat("length", 0.0f));
             mLengthEditText.setText(String.valueOf(mRoom.getLength()));
-            // TODO: finish for other Views
-
+            mRoom.setWidth(mPrefs.getFloat("width", 0.0f));
+            mWidthEditText.setText(String.valueOf(mRoom.getWidth()));
+            mRoom.setHeight(mPrefs.getFloat("height", 0.0f));
+            mHeightEditText.setText(String.valueOf(mRoom.getHeight()));
+            mRoom.setDoors(mPrefs.getInt("doors", 0));
+            mDoorsEditText.setText(String.valueOf(mRoom.getDoors()));
+            mRoom.setWindows(mPrefs.getInt("windows", 0));
+            mWindowsEditText.setText(String.valueOf(mRoom.getWindows()));
         }
     }
 
@@ -65,14 +77,22 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences.Editor editor = mPrefs.edit();
         editor.clear();
         editor.putFloat("length", mRoom.getLength());
-        editor.putFloat("height", mRoom.getHeight());
         editor.putFloat("width", mRoom.getWidth());
+        editor.putFloat("height", mRoom.getHeight());
         editor.putInt("doors", mRoom.getDoors());
         editor.putInt("windows", mRoom.getWindows());
         // Save changes to SharedPreferences file
         editor.commit();
     }
 
+    /**
+     * Initializes <code>MainActivity</code> by inflating its UI. Also loads <code>EditText</code>
+     * views with data from <code>SharedPreferences</code> file.
+     *
+     * @param savedInstanceState Bundle containing the data it recently supplied in
+     *                           onSaveInstanceState(Bundle) if activity was reinitialized after
+     *                           being previously shut down. Otherwise it is null.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -81,18 +101,27 @@ public class MainActivity extends AppCompatActivity
 
         initializeViews();
         loadSharedPreferences();
-
     }
 
+    /**
+     * Computes the gallons of paint needed to paint the total surface area of the room with
+     * dimensions specified by the user.
+     * @param v The <code>View</code> that called this method.
+     */
     protected void computeGallons(View v)
     {
         // Update model first, then calculate
         mRoom.setLength(Float.parseFloat(mLengthEditText.getText().toString()));
+        mRoom.setWidth(Float.parseFloat(mWidthEditText.getText().toString()));
         mRoom.setHeight(Float.parseFloat(mHeightEditText.getText().toString()));
-        // TODO: continue updating model
+        mRoom.setDoors(Integer.parseInt(mDoorsEditText.getText().toString()));
+        mRoom.setWindows(Integer.parseInt(mWindowsEditText.getText().toString()));
 
-        mGallonsTextView.setText(getString(R.string.interior_surface_area_text) + mRoom.totalSurfaceArea()
-                + "\n" + getString(R.string.gallons_needed_text) + mRoom.gallonsOfPaintRequired());
+        mGallonsTextView.setText(getString(R.string.interior_surface_area_text)
+                + " " + oneDP.format(mRoom.totalSurfaceArea())+ " feet"
+                + "\n" + getString(R.string.gallons_needed_text) + " "
+                + oneDP.format(mRoom.gallonsOfPaintRequired()));
+
         saveSharedPreferences();
     }
 
